@@ -4,7 +4,12 @@ import { mount } from "@vue/test-utils";
 import HelloWorld from "@/components/HelloWorld.vue";
 
 describe("HelloWorld", () => {
-  it("renders properly", () => {
+  it("Default props work", () => {
+    const wrapper = mount(HelloWorld);
+    expect(wrapper.text()).toContain("Hello World");
+  });
+
+  it("Custom props work", () => {
     const wrapper = mount(HelloWorld, { props: { msg: "Hello Vitest" } });
     expect(wrapper.text()).toContain("Hello Vitest");
   });
