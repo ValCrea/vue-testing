@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 export interface Props {
   msg?: string;
 }
@@ -6,10 +8,16 @@ export interface Props {
 const props = withDefaults(defineProps<Props>(), {
   msg: "Hello World",
 });
+
+const count = ref(0);
 </script>
 
 <template>
-  <p>{{ props.msg }}</p>
+  <div>
+    <p>{{ props.msg }}</p>
+    <p>Clicked: {{ count }}</p>
+    <button @click="count++">Click</button>
+  </div>
 </template>
 
 <style scoped></style>
