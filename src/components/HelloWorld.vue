@@ -17,6 +17,7 @@ const count = ref(0);
     <p>{{ props.msg }}</p>
     <p>Clicked: {{ count }}</p>
     <button @click="count++">Click</button>
+    <span>SPAN</span>
   </div>
 </template>
 
